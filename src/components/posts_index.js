@@ -12,15 +12,14 @@ class PostsIndex extends Component {
   renderPosts(){
       return _.map(this.props.posts, post => { //We use _.map because this.props.posts is an object not an array.
           return (
-              <li className="list-group-item" key={post.id}>
-                {post.title}
+              <li className="list-group-item" key={post.title}>
+                <Link to={`/posts/${post.id}`}>{post.title}</Link>&nbsp;
               </li>
           );
       }); 
   }
 
   render() {
-      console.log(this.props.posts);
     return(
       <div>
         <div className="text-xs-right">
